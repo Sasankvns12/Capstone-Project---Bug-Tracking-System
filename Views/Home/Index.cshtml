@@ -1,0 +1,88 @@
+@{
+    ViewData["Title"] = "Bug Tracker Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-4">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary mb-3">🚀 Bug Tracker</h1>
+        <p class="lead text-muted col-md-8 mx-auto">
+            Track, prioritize, and resolve bugs efficiently with our lightweight system.
+        </p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Report Bug Card -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-shadow transition">
+                <div class="card-body text-center p-4">
+                    <div class="bg-success bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                        <i class="fas fa-bug text-success fs-4"></i>
+                    </div>
+                    <h5 class="card-title mb-2">Report Bug</h5>
+                    <p class="card-text text-muted small mb-3">
+                        Submit new bugs with severity levels and assignment details.
+                    </p>
+                    <a asp-action="Create" asp-controller="Bugs" class="btn btn-success btn-sm px-3">
+                        <i class="fas fa-plus me-1"></i> Create
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Bugs Card -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-shadow transition">
+                <div class="card-body text-center p-4">
+                    <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                        <i class="fas fa-list text-primary fs-4"></i>
+                    </div>
+                    <h5 class="card-title mb-2">Manage Bugs</h5>
+                    <p class="card-text text-muted small mb-3">
+                        View, filter, and update all reported issues in one place.
+                    </p>
+                    <a asp-action="Index" asp-controller="Bugs" class="btn btn-primary btn-sm px-3">
+                        <i class="fas fa-eye me-1"></i> View All
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Card -->
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm hover-shadow transition">
+                <div class="card-body text-center p-4">
+                    <div class="bg-warning bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                        <i class="fas fa-chart-bar text-warning fs-4"></i>
+                    </div>
+                    <h5 class="card-title mb-2">Analytics</h5>
+                    <p class="card-text text-muted small mb-3">
+                        Track resolution metrics and team performance.
+                    </p>
+                    <span class="btn btn-warning btn-sm px-3 disabled">
+                        Coming Soon
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-shadow:hover {
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+        transform: translateY(-2px);
+    }
+
+    .transition {
+        transition: all 0.2s ease;
+    }
+
+    .card {
+        cursor: pointer;
+    }
+
+        .card:hover .btn:not(.disabled) {
+            background-color: var(--bs-dark);
+        }
+</style>

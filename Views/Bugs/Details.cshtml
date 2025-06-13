@@ -1,0 +1,50 @@
+@model WebApplication19.Models.Bug
+
+@{
+    ViewData["Title"] = "Bug Details";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm" style="background-color: #e6f2ff;">
+                <!-- light blue background -->
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">🔍 Bug Details</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Id)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Id)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Title)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Title)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Description)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Description)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Severity)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Severity)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Status)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Status)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Type)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Type)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Assignee)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Assignee)</dd>
+
+                        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ReportedDate)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ReportedDate)</dd>
+                    </dl>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a asp-action="Index" class="btn btn-outline-secondary">← Back to List</a>
+                        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">✏️ Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
